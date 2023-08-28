@@ -25,7 +25,7 @@ module Services
       # @param url [String]
       # @param headers [Array<Hash<String, String>>]
       def http_client(url:, headers:)
-        FaradayFactory.http_client.get(url, nil, headers)
+        HTTParty.get(url, { headers: })
       end
 
       # @param issue [Array|Hash]

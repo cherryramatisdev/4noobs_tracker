@@ -73,4 +73,6 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'faraday', '~> 2.7'
+gem 'ruby-progressbar', '~> 1.13'
+
+gem 'httparty', '~> 0.21.0'
