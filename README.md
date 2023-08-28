@@ -59,6 +59,8 @@ $ rails fetch:issues
 Contribuições fazem com que a comunidade open source seja um lugar incrível para aprender, inspirar e criar. Todas as contribuições
 são **extremamente apreciadas**!
 
+> Caso seja iniciante no framework Ruby on Rails, dê uma olhada na [pasta docs](/docs/)
+
 1. Realize um Fork do projeto
 2. Crie um branch com a nova feature (`git checkout -b feature/featurebraba`)
 3. Realize o Commit (`git commit -m 'feature/featurebraba'`)
