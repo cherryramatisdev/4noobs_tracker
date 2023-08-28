@@ -1,26 +1,26 @@
 <% @repositories.each do |repository| %>
-  <% unless repository[:issues].empty? %>
+  <% unless repository.issues.empty? %>
     <div class="card mb-2 p-2">
       <h2>
-        <a href="<%= repository[:url] %>" class="text-lg-left">
-          <%= repository[:name] %>
+        <a href="<%= repository.url %>" class="text-lg-left">
+          <%= repository.name %>
         </a>
       </h2>
 
       <ul>
-        <% repository[:issues].each do |issue| %>
+        <% repository.issues.each do |issue| %>
           <li class="mb-2">
             <div class="d-flex gap-2">
-              <a href="<%= issue[:url] %>">
-                <%= issue[:title] %>
+              <a href="<%= issue.url %>">
+                <%= issue.title %>
               </a>
 
-              <span class="h-25 px-2 d-flex align-items-center bg-success <%= issue_state_color(issue_state: issue[:state]) %> text-light rounded-pill">
-                <%= issue[:state] %>
+              <span class="h-25 px-2 d-flex align-items-center bg-success <%= issue_state_color(issue_state: issue.state) %> text-light rounded-pill">
+                <%= issue.state %>
               </span>
 
               <span class="h-25 px-2 d-flex align-items-center bg-dark text-light rounded-pill">
-                <%= issue[:type] %>
+                <%= issue.issue_type %>
               </span>
             </div>
           </li>

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Repository < ApplicationRecord
-  has_many :repositories
+  has_many :issues
 end
