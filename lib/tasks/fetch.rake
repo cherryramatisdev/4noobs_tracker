@@ -8,7 +8,7 @@ namespace :fetch do
 
     progress_bar = ProgressBar.create
 
-    Services::Github::ExtractRepositories.new.call.map do |url|
+    Github::ExtractRepositories.new.call.map do |url|
       progress_bar.increment
       Repository.create(name: url[:repo_name], owner: url[:owner], url: url[:full_url])
     end
@@ -32,7 +32,7 @@ namespace :fetch do
 
     repositories.each do |repository|
       progress_bar.increment
-      Services::Github::ExtractIssuesFromRepository.new.call(id: repository[:id], name: repository[:name],
+      Github::ExtractIssuesFromRepository.new.call(id: repository[:id], name: repository[:name],
                                                              owner: repository[:owner])
     end
 
