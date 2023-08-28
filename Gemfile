@@ -76,3 +76,9 @@ end
 gem 'ruby-progressbar', '~> 1.13'
 
 gem 'httparty', '~> 0.21.0'
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.10"
+
+gem "sentry-rails", "~> 5.10"
