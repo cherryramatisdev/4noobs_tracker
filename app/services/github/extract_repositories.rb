@@ -6,6 +6,7 @@ module Services
   module Github
     class ExtractRepositories
       def call
+        # TODO: Move to HTTParty gem
         response = Faraday.get('https://raw.githubusercontent.com/he4rt/4noobs/master/README.MD')
 
         extract_url_info(extract_links(response.body)).compact
