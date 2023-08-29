@@ -1,31 +1,34 @@
-<% @repositories.each do |repository| %>
-  <% unless repository.issues.empty? %>
-    <div class="card mb-2 p-2">
-      <h2>
-        <a href="<%= repository.url %>" class="text-lg-left">
-          <%= repository.name %>
-        </a>
-      </h2>
+<div class="repository_issue_grid">
+  <% @repositories.each do |repository| %>
+    <% unless repository.issues.empty? %>
+      <div class="flex flex-col flex-justify-between bg-dark rounded-medium mb-2 py-4 px-8">
+        <main>
+          <h2 class="color-white font-size-9 mt-0">
+            <%= repository.name %>
+          </h2>
 
-      <ul>
-        <% repository.issues.each do |issue| %>
-          <li class="mb-2">
-            <div class="d-flex gap-2">
-              <a href="<%= issue.url %>">
-                <%= issue.title %>
-              </a>
+          <div>
+            <% repository.issues.each do |issue| %>
+              <div class="flex flex-col gap-2">
+                <a href="<%= issue.url %>" class="font-size-5 color-blue">
+                  <%= issue.title %>
+                </a>
 
-              <span class="h-25 px-2 d-flex align-items-center bg-success <%= issue_state_color(issue_state: issue.state) %> text-light rounded-pill">
-                <%= issue.state %>
-              </span>
+                <div class="flex gap-2">
+                  <%= render "tag", content: issue.state, bg: issue_state_color(issue_state: issue.state) %>
+                  <%= render "tag", content: issue.issue_type, bg: 'bg-black' %>
+                </div>
+              </div>
 
-              <span class="h-25 px-2 d-flex align-items-center bg-dark text-light rounded-pill">
-                <%= issue.issue_type %>
-              </span>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+              <hr class="b-coolGray-7 my-4" />
+            <% end %>
+          </div>
+        </main>
+
+        <footer class="flex-self-end p-4 border-width-1 border-solid border-purple rounded-small">
+          <a href="<%= repository.url %>" class="color-white no-underline font-size-5">Visitar repo</a>
+        </footer>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
