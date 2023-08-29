@@ -5,9 +5,9 @@ module RepositoryHelper
   def issue_state_color(issue_state:)
     case issue_state
     in 'open'
-      return 'bg-success'
+      return 'bg-green-700'
     in 'closed'
-      return 'bg-danger'
+      return 'bg-red-700'
     end
   end
 end
