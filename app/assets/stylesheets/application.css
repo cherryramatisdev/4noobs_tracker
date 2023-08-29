@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  background-color: #1E1E1E;
+}

@@ -1,0 +1,12 @@
+.pill {
+  min-width: 4rem;
+  border-radius: 1rem;
+}
+
+.rounded-small {
+  border-radius: 1rem;
+}
+
+.rounded-medium {
+  border-radius: 2rem;
+}
