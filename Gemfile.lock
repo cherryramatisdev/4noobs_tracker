@@ -97,6 +97,8 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -258,6 +260,7 @@ DEPENDENCIES
   debug
   dockerfile-rails (>= 1.5)
   dotenv-rails
+  heroicon (~> 1.0)
   httparty (~> 0.21.0)
   importmap-rails
   jbuilder

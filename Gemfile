@@ -82,3 +82,5 @@ gem "dockerfile-rails", ">= 1.5", :group => :development
 gem "sentry-ruby", "~> 5.10"
 
 gem "sentry-rails", "~> 5.10"
+
+gem "heroicon", "~> 1.0"
