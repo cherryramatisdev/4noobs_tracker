@@ -1,0 +1,29 @@
+<div class="min-h-xl flex flex-col flex-items-center flex-justify-between bg-white mb-2 py-4 px-8 rounded-smallest b-l-solid b-l-8 b-purple-5">
+  <main>
+    <h2 class="color-black text-center font-size-9 font-400 mt-0">
+      <%= repository.name %>
+    </h2>
+
+    <div>
+      <% repository.issues.each do |issue| %>
+        <div class="flex flex-row flex-items-start gap-2 mb-8">
+          <%= icon issue.issue_type %>
+          <div class="flex flex-col">
+            <a href="<%= issue.url %>" class="font-size-5 color-black hover-underline no-underline">
+              <%= issue.title %>
+            </a>
+
+            <div class="flex gap-2 mt-2">
+              <%= render "tag", content: issue.state %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </main>
+
+  <footer class="flex flex-items-center flex-justify-center flex-self-start gap-2">
+    <%= heroicon 'arrow-top-right-on-square', options: { class: 'icon-size color-purple-9' } %>
+    <a href="<%= repository.url %>" class="color-black hover-underline no-underline font-size-5">Abrir repositório</a>
+  </footer>
+</div>
