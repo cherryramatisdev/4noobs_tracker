@@ -3,6 +3,10 @@
   border-radius: 1rem;
 }
 
+.rounded-smallest {
+  border-radius: 0.5rem;
+}
+
 .rounded-small {
   border-radius: 1rem;
 }

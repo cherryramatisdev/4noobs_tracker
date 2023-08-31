@@ -1,5 +1,10 @@
 .repository_issue_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: 2rem;
+}
+
+.icon-size {
+  width: 12px;
+  height: 12px;
 }

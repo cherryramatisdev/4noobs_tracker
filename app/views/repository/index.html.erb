@@ -1,34 +1,7 @@
 <div class="repository_issue_grid">
   <% @repositories.each do |repository| %>
     <% unless repository.issues.empty? %>
-      <div class="flex flex-col flex-justify-between bg-dark rounded-medium mb-2 py-4 px-8">
-        <main>
-          <h2 class="color-white font-size-9 mt-0">
-            <%= repository.name %>
-          </h2>
-
-          <div>
-            <% repository.issues.each do |issue| %>
-              <div class="flex flex-col gap-2">
-                <a href="<%= issue.url %>" class="font-size-5 color-blue">
-                  <%= issue.title %>
-                </a>
-
-                <div class="flex gap-2">
-                  <%= render "tag", content: issue.state, bg: issue_state_color(issue_state: issue.state) %>
-                  <%= render "tag", content: issue.issue_type, bg: 'bg-black' %>
-                </div>
-              </div>
-
-              <hr class="b-coolGray-7 my-4" />
-            <% end %>
-          </div>
-        </main>
-
-        <footer class="flex-self-end p-4 border-width-1 border-solid border-purple rounded-small">
-          <a href="<%= repository.url %>" class="color-white no-underline font-size-5">Visitar repo</a>
-        </footer>
-      </div>
+      <%= render 'card', repository: %>
     <% end %>
   <% end %>
 </div>
