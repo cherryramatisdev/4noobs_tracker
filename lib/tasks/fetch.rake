@@ -4,11 +4,13 @@ namespace :fetch do
   desc 'Fetch all the repositories from the README at https://github.com/he4rt/4noobs and insert to the database'
   task repositories: :environment do
     require_relative '../../app/services/github/extract_repositories'
-    require 'ruby-progressbar'
 
-    progress_bar = ProgressBar.create
+    urls = Github::ExtractRepositories.new.call
+    total_urls = urls.length
 
-    Github::ExtractRepositories.new.call.map do |url|
+    progress_bar = ProgressBar.create(total: total_urls)
+
+    urls.each do |url|
       progress_bar.increment
       Repository.create(name: url[:repo_name], owner: url[:owner], url: url[:full_url])
     end
@@ -28,7 +30,7 @@ namespace :fetch do
       return
     end
 
-    progress_bar = ProgressBar.create
+    progress_bar = ProgressBar.create(total: repositories.count)
 
     repositories.each do |repository|
       progress_bar.increment
