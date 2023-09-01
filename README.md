@@ -38,7 +38,7 @@ bundle install
 Parabéns 🎉, você realizou a instalação do projeto. Agora basta iniciar a aplicação
 
 ```shell
-rails server
+bundle exec rails server
 ```
 
 #### Fazendo o fetch dos repositórios e issues
@@ -48,10 +48,10 @@ repositórios e issues com os seguintes comandos
 
 ```shell
 # Fazendo fetch de todos os repositórios
-$ rails fetch:repositories
+$ bundle exec rails fetch:repositories
 
 # Fazendo fetch de todas as issues/pull requests
-$ rails fetch:issues
+$ bundle exec rails fetch:issues
 ```
 
 ## Como contribuir
