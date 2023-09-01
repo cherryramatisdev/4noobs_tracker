@@ -59,8 +59,9 @@ RUN useradd rails --create-home --shell /bin/bash && \
     mkdir /data && \
     chown -R rails:rails db log storage tmp /data
 
-# Run whenever to update crontab
 USER rails:rails
+
+# Run whenever to update crontab
 RUN bundle exec wheneverize . && \
     bundle exec whenever --update-crontab && \
     service cron start  # Start the cron service
