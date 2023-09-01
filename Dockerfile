@@ -45,9 +45,9 @@ RUN SECRET_KEY_BASE=DUMMY ./bin/rails assets:precompile
 # Final stage for app image
 FROM base
 
-# Install packages needed for deployment
+# Install packages needed for deployment and cron
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 cron && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
@@ -58,7 +58,12 @@ COPY --from=build /rails /rails
 RUN useradd rails --create-home --shell /bin/bash && \
     mkdir /data && \
     chown -R rails:rails db log storage tmp /data
+
+# Run whenever to update crontab
 USER rails:rails
+RUN bundle exec wheneverize . && \
+    bundle exec whenever --update-crontab && \
+    service cron start  # Start the cron service
 
 # Deployment options
 ENV DATABASE_URL="sqlite3:///data/production.sqlite3" \
