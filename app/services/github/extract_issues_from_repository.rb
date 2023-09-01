@@ -16,7 +16,7 @@ module Github
 
       return [] if json_response.empty? || json_response.nil?
 
-      insert_to_table(response: json_response, repository_id: id)
+      batch_upsert_to_table(response: json_response, repository_id: id)
     end
 
     private
@@ -45,13 +45,27 @@ module Github
 
     # @param response [Array<Hash>] This is after being parsed by JSON.parse
     # @return [void]
-    def insert_to_table(response:, repository_id:)
+    def batch_upsert_to_table(response:, repository_id:)
+      issues_to_upsert = []
+
       response.each do |obj|
         next unless validate_issue_object(obj)
 
-        Issue.create(title: obj['title'], url: obj['html_url'], state: obj['state'],
-                     assignee: obj['assignee'] ||= '', issue_type: extract_url_type(url: obj['html_url']),
-                     repository_id:)
+        issue = Issue.find_or_initialize_by(url: obj['html_url'])
+        issue.assign_attributes(
+          title: obj['title'],
+          url: obj['html_url'],
+          state: obj['state'],
+          assignee: obj['assignee'] ||= '',
+          issue_type: extract_url_type(url: obj['html_url']),
+          repository_id:
+        )
+
+        issues_to_upsert << issue
+      end
+
+      Issue.transaction do
+        issues_to_upsert.each(&:save!)
       end
     end
   end
