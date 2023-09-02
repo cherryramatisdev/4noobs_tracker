@@ -46,6 +46,10 @@ bundle exec rails server
 Caso a sua página inicial esteja vazia, você pode fazer o fetch de todos os
 repositórios e issues com os seguintes comandos
 
+**Importante**
+
+Para conseguir executar esse comandos é necessária a configuração de uma variável de ambiente no projeto com o token do GitHub para que seja possível acessar a API deles. Por favor referencie a [documentação](/docs/3-como-criar-um-token-github.md)
+
 ```shell
 # Fazendo fetch de todos os repositórios
 $ bundle exec rails fetch:repositories
