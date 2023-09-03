@@ -45,7 +45,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 100;
   transition: opacity 0.3s;
   opacity: 1;
 }
