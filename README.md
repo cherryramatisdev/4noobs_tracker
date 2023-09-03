@@ -80,3 +80,8 @@ são **extremamente apreciadas**!
 3. Realize o Commit (`git commit -m 'feature/featurebraba'`)
 4. Realize o Push no Branch (`git push origin feature/featurebraba`)
 5. Quando finalizar abra um Pull Request
+
+## Pessoas que melhoraram este projeto
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
