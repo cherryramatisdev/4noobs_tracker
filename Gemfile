@@ -88,3 +88,5 @@ gem "heroicon", "~> 1.0"
 gem "pry", "~> 0.14.2"
 gem 'pry-rails'
 gem 'whenever', require: false
+
+gem "faker", "~> 3.2"
