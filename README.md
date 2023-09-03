@@ -81,7 +81,7 @@ são **extremamente apreciadas**!
 4. Realize o Push no Branch (`git push origin feature/featurebraba`)
 5. Quando finalizar abra um Pull Request
 
-## Pessoas que melhoraram este projeto
+## Pessoas que melhoraram este projeto!
 
-<!-- readme: contributors -start -->
-<!-- readme: contributors -end -->
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
