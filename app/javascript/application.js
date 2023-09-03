@@ -5,10 +5,9 @@ import "controllers"
 window.addEventListener('load', function () {
   var loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
-    // Set a short delay to ensure a smooth fade-out effect
     setTimeout(function () {
       loadingSpinner.style.opacity = 0;
-      // After the opacity transition, hide the spinner
+
       setTimeout(function () {
         loadingSpinner.style.display = 'none';
       }, 300);
