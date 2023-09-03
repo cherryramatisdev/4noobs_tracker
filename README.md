@@ -84,4 +84,21 @@ são **extremamente apreciadas**!
 ## Pessoas que melhoraram este projeto
 
 <!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/cherryramatisdev">
+            <img src="https://avatars.githubusercontent.com/u/86631177?v=4" width="100;" alt="cherryramatisdev"/>
+            <br />
+            <sub><b>Cherry Ramatis</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Nandosts">
+            <img src="https://avatars.githubusercontent.com/u/65089035?v=4" width="100;" alt="Nandosts"/>
+            <br />
+            <sub><b>Fernando Melo</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors -end -->
