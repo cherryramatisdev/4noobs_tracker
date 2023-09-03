@@ -97,6 +97,8 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    faker (3.2.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     heroicon (1.0.0)
@@ -270,6 +272,7 @@ DEPENDENCIES
   debug
   dockerfile-rails (>= 1.5)
   dotenv-rails
+  faker (~> 3.2)
   heroicon (~> 1.0)
   httparty (~> 0.21.0)
   importmap-rails
