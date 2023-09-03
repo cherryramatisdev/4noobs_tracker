@@ -83,5 +83,5 @@ são **extremamente apreciadas**!
 
 ## Pessoas que melhoraram este projeto
 
-<!-- readme: collaborators,contributors -start -->
-<!-- readme: collaborators,contributors -end -->
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
