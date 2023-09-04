@@ -35,7 +35,7 @@ body {
   background-color: #272727;
 }
 
-.loading-spinner {
+#loading-spinner {
   position: fixed;
   top: 0;
   left: 0;
