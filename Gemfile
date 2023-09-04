@@ -88,5 +88,6 @@ gem "heroicon", "~> 1.0"
 gem "pry", "~> 0.14.2"
 gem 'pry-rails'
 gem 'whenever', require: false
+gem 'will_paginate', '~> 3.3'
 
 gem "faker", "~> 3.2"
