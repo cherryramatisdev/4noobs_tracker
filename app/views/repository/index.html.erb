@@ -1,7 +1,55 @@
-<div class="repository_issue_grid">
+<div class="repository_issue_grid" id="repositories">
   <% @repositories.each do |repository| %>
     <% unless repository.issues.empty? %>
       <%= render 'card', repository: %>
     <% end %>
   <% end %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const repositoriesContainer = document.getElementById("repositories-container");
+    const repositoriesDiv = document.getElementById("repositories");
+    let loading = false;
+    let page = 2; // Start with the second page (assuming the first page is loaded in the view)
+
+    function extractRepositoriesFromHTML(html) {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const repositoriesDiv = tempDiv.querySelector('#repositories');
+      return repositoriesDiv ? repositoriesDiv.innerHTML : '';
+    }
+
+    function appendRepositories(data) {
+      repositoriesDiv.insertAdjacentHTML('beforeend', data);
+    }
+
+    function loadRepositories() {
+      if (!loading) {
+        loading = true;
+        const url = `/repository?page=${page}`;
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            const repositoriesHTML = extractRepositoriesFromHTML(data);
+
+            if (repositoriesHTML.trim() === "") {
+              // There are no more records to load
+              clearInterval(intervalId);
+            } else {
+              appendRepositories(repositoriesHTML);
+              page++;
+            }
+          })
+          .catch((error) => console.error("Error loading repositories:", error))
+          .finally(() => {
+            loading = false;
+          });
+      }
+    }
+
+    const intervalId = setInterval(loadRepositories, 500);
+
+  });
+</script>
+
