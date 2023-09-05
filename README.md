@@ -20,16 +20,16 @@ Para um guia mais direto com a instalação, recomendo entrar no [gorails](https
 
 Com o `git` instalado, clone o repositório
 
-```shell
+```sh
 
-$ git clone https://github.com/cherryramatisdev/4noobs_tracker.git && cd 4noobs_tracker
+git clone https://github.com/cherryramatisdev/4noobs_tracker.git && cd 4noobs_tracker
 ```
 
 #### Instalando as dependências
 
 Instale todas as dependências executando o seguinte em seu terminal
 
-```shell
+```sh
 bundle install
 ```
 
@@ -37,16 +37,30 @@ bundle install
 
 Parabéns 🎉, você realizou a instalação do projeto. Agora basta iniciar a aplicação
 
-```shell
+```sh
 bundle exec rails server
 ```
 
 #### Fazendo o fetch dos repositórios e issues
 
-Caso a sua página inicial esteja vazia, você pode fazer o fetch de todos os
-repositórios e issues com os seguintes comandos
+Caso a sua página inicial esteja vazia, você tem duas opções para conseguir desenvolver tranquilamente:
 
-```shell
+1. Usar mock: Super útil caso você tenha interesse apenas em testar o framework e não quer lidar com configuração de tokens e etc (*Recomendado para iniciantes*).
+2. Usar os comandos `fetch`: Caso você tenha interesse em modificar a logica principal da aplicação, necessita lidar com geração de tokens. (**Caso
+
+##### Usar mock
+
+Para usar o mock é super simples, apenas execute o comando:
+
+```sh
+rails db:seed
+```
+
+##### Usar os comandos fetch
+
+Para conseguir executar esse comandos é necessária a configuração de uma variável de ambiente no projeto com o token do GitHub para que seja possível acessar a API deles. Por favor referencie a [documentação](/docs/3-como-criar-um-token-github.md)
+
+```sh
 # Fazendo fetch de todos os repositórios
 $ bundle exec rails fetch:repositories
 
@@ -66,3 +80,25 @@ são **extremamente apreciadas**!
 3. Realize o Commit (`git commit -m 'feature/featurebraba'`)
 4. Realize o Push no Branch (`git push origin feature/featurebraba`)
 5. Quando finalizar abra um Pull Request
+
+## Pessoas que melhoraram este projeto!
+
+<!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/cherryramatisdev">
+            <img src="https://avatars.githubusercontent.com/u/86631177?v=4" width="100;" alt="cherryramatisdev"/>
+            <br />
+            <sub><b>Cherry Ramatis</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Nandosts">
+            <img src="https://avatars.githubusercontent.com/u/65089035?v=4" width="100;" alt="Nandosts"/>
+            <br />
+            <sub><b>Fernando Melo</b></sub>
+        </a>
+    </td></tr>
+</table>
+<!-- readme: collaborators,contributors -end -->
