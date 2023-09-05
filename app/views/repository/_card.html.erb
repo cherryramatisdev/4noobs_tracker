@@ -4,7 +4,7 @@
       <%= repository.name %>
     </h2>
 
-    <div>
+    <div class="issues-wrapper">
       <% repository.issues.each do |issue| %>
         <div class="flex flex-row flex-items-start gap-2 mb-8">
           <%= icon issue.issue_type %>
