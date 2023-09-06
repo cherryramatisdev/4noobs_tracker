@@ -1,7 +1,7 @@
 <div class="repository_issue_grid" id="repositories">
   <% @repositories.each do |repository| %>
     <% unless repository.issues.empty? %>
-      <%= render 'card', repository: %>
+      <%= render 'card', has_badge: true, repository: %>
     <% end %>
   <% end %>
 </div>

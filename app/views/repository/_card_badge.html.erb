@@ -1,0 +1,7 @@
+<div class="card-badge">
+  <% if technology.nil? %>
+    <%= image_tag "tech-default.svg", alt: "Card of the repository default" %>
+  <% else %>
+    <%= image_tag "tech-#{technology}.svg", alt: "Card tenchnology for #{technology}" %>
+  <% end %>
+</div>
