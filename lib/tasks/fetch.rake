@@ -12,7 +12,13 @@ namespace :fetch do
 
     urls.each do |url|
       progress_bar.increment
-      Repository.create(name: url[:repo_name], owner: url[:owner], url: url[:full_url])
+      repository = Repository.find_or_initialize_by(name: url[:repo_name])
+      repository.assign_attributes(
+        name: url[:repo_name],
+        owner: url[:owner],
+        url: url[:full_url]
+      )
+      repository.save!
     end
 
     progress_bar.finish
