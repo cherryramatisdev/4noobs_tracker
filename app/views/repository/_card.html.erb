@@ -1,6 +1,10 @@
-<div class="min-h-xl flex flex-col flex-items-center flex-justify-between bg-white mb-2 py-4 px-8 rounded-smallest b-l-solid b-l-8 b-purple-5">
+<div class="min-h-xl flex flex-col flex-items-start flex-justify-between bg-white mb-2 pb-4 pt-15 px-8 rounded-smallest b-l-solid b-l-8 b-purple-5 position-relative">
+  <% if has_badge %>
+    <%= render "card_badge", technology: nil %>
+  <% end %>
+
   <main>
-    <h2 class="color-black text-center font-size-9 font-400 mt-0">
+    <h2 class="color-black font-size-9 font-400 mt-0 font-bold">
       <%= repository.name %>
     </h2>
 
