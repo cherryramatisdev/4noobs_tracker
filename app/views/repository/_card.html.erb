@@ -22,16 +22,16 @@
     </div>
   </main>
 
-  <footer class="flex flex-col flex-items-center flex-justify-center flex-self-start gap-2">
-    <div class="flex items-center">
+  <footer class="flex flex-col flex-items-start flex-justify-center flex-self-start gap-2">
+    <div class="flex gap-2 items-center">
       <%= heroicon 'arrow-top-right-on-square', options: { class: 'icon-size color-purple-9' } %>
       <a href="https://github.com/<%= repository.owner %>/<%= repository.name %>/issues" class="color-black hover-underline no-underline font-size-5">Ver todas as issues</a>
     </div>
-    <div class="flex items-center">
+    <div class="flex gap-2 items-center">
       <%= heroicon 'arrow-top-right-on-square', options: { class: 'icon-size color-purple-9' } %>
       <a href="https://github.com/<%= repository.owner %>/<%= repository.name %>/pulls" class="color-black hover-underline no-underline font-size-5">Ver todos os PRs</a>
     </div>
-    <div class="flex items-center">
+    <div class="flex gap-2 items-center">
       <%= heroicon 'arrow-top-right-on-square', options: { class: 'icon-size color-purple-9' } %>
       <a href="<%= repository.url %>" class="color-black hover-underline no-underline font-size-5">Abrir repositório</a>
     </div>
