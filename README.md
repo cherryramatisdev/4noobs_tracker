@@ -106,6 +106,13 @@ são **extremamente apreciadas**!
             <br />
             <sub><b>William Rodrigues</b></sub>
         </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/harkato">
+            <img src="https://avatars.githubusercontent.com/u/92404938?v=4" width="100;" alt="harkato"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
     </td></tr>
 </table>
 <!-- readme: collaborators,contributors -end -->
