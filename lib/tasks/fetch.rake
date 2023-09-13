@@ -5,18 +5,19 @@ namespace :fetch do
   task repositories: :environment do
     require_relative '../../app/services/github/extract_repositories'
 
-    urls = Github::ExtractRepositories.new.call
-    total_urls = urls.length
+    repositories_info = Github::ExtractRepositories.new.call
+    total_repositories = repositories_info.length
 
-    progress_bar = ProgressBar.create(total: total_urls)
+    progress_bar = ProgressBar.create(total: total_repositories)
 
-    urls.each do |url|
+    repositories_info.each do |repository_info|
       progress_bar.increment
-      repository = Repository.find_or_initialize_by(name: url[:repo_name])
+      repository = Repository.find_or_initialize_by(name: repository_info[:repo_name])
       repository.assign_attributes(
-        name: url[:repo_name],
-        owner: url[:owner],
-        url: url[:full_url]
+        name: repository_info[:repo_name],
+        owner: repository_info[:owner],
+        url: repository_info[:full_url],
+        technology: repository_info[:technology]
       )
       repository.save!
     end
