@@ -1,3 +1,8 @@
 <div class="card-badge">
-  <%= image_tag "tech-#{technology ||= 'default'}.svg", alt: "Card of the repository #{technology ||= 'default'}" %>
+  <img
+    src="<%= '/assets/' + technology_image_pattern + '.svg' %>"
+    alt="<%= 'Card of the repository ' + technology %>"
+    width="23"
+    onerror="this.onerror=null; this.src='/assets/default.svg'; this.alt='Card of the repository default'"
+  >
 </div>
