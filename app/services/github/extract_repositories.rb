@@ -45,11 +45,31 @@ module Github
       # Ignores row that don't have GitHub repo.
       # For example headers table and unpublished 4Noobs.
       return if row_info_match.nil?
+      technology = row_info_match[1].strip
       {
         owner: row_info_match[3],
         repo_name: row_info_match[4],
         full_url: row_info_match[2],
-        technology: row_info_match[1]
+        technology: technology,
+        technology_image_pattern: define_technology_image_pattern(technology),
       }
     end
+
+    # Returns the technology image pattern.
+    #
+    # This method transforms the technology, treating special cases such as
+    # "C#" into "csharp", removing spaces and transforming to lowercase.
+    #
+    # @param technology [String] This represent the parsed technology
+    def define_technology_image_pattern(technology)
+      case technology
+        when 'C#'
+          return 'csharp'
+        when 'C++'
+          return 'cplusplus'
+        else
+          return technology.gsub(%r{ }, '').downcase
+      end
+    end
+  end
 end

@@ -17,7 +17,8 @@ namespace :fetch do
         name: repository_info[:repo_name],
         owner: repository_info[:owner],
         url: repository_info[:full_url],
-        technology: repository_info[:technology]
+        technology: repository_info[:technology],
+        technology_image_pattern: repository_info[:technology_image_pattern]
       )
       repository.save!
     end
