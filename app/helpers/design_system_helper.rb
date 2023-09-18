@@ -29,4 +29,21 @@ module DesignSystemHelper
       HTML
     end
   end
+
+  # Returns the technology image pattern.
+  #
+  # This method transforms the technology, treating special cases such as
+  # "C#" into "csharp", removing spaces and transforming to lowercase.
+  #
+  # @param technology [String] This represent the parsed technology
+  def define_technology_image_pattern(technology)
+    case technology
+    in 'C#'
+      'csharp.svg'
+    in 'C++'
+      'cplusplus.svg'
+    else
+      technology.gsub(%r{ }, '').downcase + '.svg'
+    end
+  end
 end

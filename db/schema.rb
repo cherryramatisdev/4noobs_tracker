@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_915_192_529) do
+ActiveRecord::Schema[7.0].define(version: 20_230_918_175_013) do
   create_table 'issues', force: :cascade do |t|
     t.string 'title'
     t.string 'url'
@@ -30,7 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_915_192_529) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.string 'technology'
-    t.string 'technology_image_pattern'
   end
 
   add_foreign_key 'issues', 'repositories'
