@@ -10,26 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_185252) do
-  create_table "issues", force: :cascade do |t|
-    t.string "title"
-    t.string "url"
-    t.string "state"
-    t.string "assignee"
-    t.string "issue_type"
-    t.integer "repository_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["repository_id"], name: "index_issues_on_repository_id"
+ActiveRecord::Schema[7.0].define(version: 20_230_918_175_013) do
+  create_table 'issues', force: :cascade do |t|
+    t.string 'title'
+    t.string 'url'
+    t.string 'state'
+    t.string 'assignee'
+    t.string 'issue_type'
+    t.integer 'repository_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['repository_id'], name: 'index_issues_on_repository_id'
   end
 
-  create_table "repositories", force: :cascade do |t|
-    t.string "name"
-    t.string "owner"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'repositories', force: :cascade do |t|
+    t.string 'name'
+    t.string 'owner'
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'technology'
   end
 
-  add_foreign_key "issues", "repositories"
+  add_foreign_key 'issues', 'repositories'
 end

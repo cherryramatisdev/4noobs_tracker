@@ -18,7 +18,7 @@ module GhIssueLister
     config.hosts << '127.0.0.1'
 
     # Because Sqlite3 is all right
-    config.active_record.sqlite3_production_warning=false
+    config.active_record.sqlite3_production_warning = false
 
     # Configuration for the application, engines, and railties goes here.
     #

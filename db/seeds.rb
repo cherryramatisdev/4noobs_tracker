@@ -8,6 +8,7 @@ require 'faker'
     name: Faker::App.name,
     owner: Faker::Internet.user_name,
     url: Faker::Internet.url
+    technology: Faker::ProgrammingLanguage.name
   )
 
   # Create 2 issues for each repository
@@ -18,7 +19,7 @@ require 'faker'
       state: 'open',
       assignee: Faker::Internet.user_name,
       issue_type: 'issues',
-      repository: repository
+      repository:
     )
   end
 end

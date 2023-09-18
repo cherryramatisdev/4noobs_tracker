@@ -1,6 +1,6 @@
 <div class="min-h-xl flex flex-col flex-items-start flex-justify-between bg-white mb-2 pb-4 pt-15 px-8 rounded-smallest b-l-solid b-l-8 b-purple-5 position-relative">
   <% if has_badge %>
-    <%= render "card_badge", technology: nil %>
+    <%= render "card_badge", technology: repository.technology %>
   <% end %>
 
   <main>
