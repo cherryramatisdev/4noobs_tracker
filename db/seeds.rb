@@ -18,7 +18,7 @@ require 'faker'
       state: 'open',
       assignee: Faker::Internet.user_name,
       issue_type: 'issues',
-      repository: repository
+      repository:
     )
   end
 end

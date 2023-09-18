@@ -22,14 +22,15 @@ module Github
     def extract_repositories_info(response_string)
       repositories_info = []
 
-      table_row_regex = %r{\|.*\|?}
-      response_string.scan(table_row_regex) do | row |
+      table_row_regex = /\|.*\|?/
+      response_string.scan(table_row_regex) do |row|
         repository_info = extract_repository_info_from_row(row)
         next if repository_info.nil?
+
         repositories_info << repository_info
       end
 
-      return repositories_info
+      repositories_info
     end
 
     # Returns a hash with repository information about a valid 4Noob repository or nil otherwise.
@@ -45,13 +46,14 @@ module Github
       # Ignores row that don't have GitHub repo.
       # For example headers table and unpublished 4Noobs.
       return if row_info_match.nil?
+
       technology = row_info_match[1].strip
       {
         owner: row_info_match[3],
         repo_name: row_info_match[4],
         full_url: row_info_match[2],
-        technology: technology,
-        technology_image_pattern: define_technology_image_pattern(technology),
+        technology:,
+        technology_image_pattern: define_technology_image_pattern(technology)
       }
     end
 
@@ -63,12 +65,12 @@ module Github
     # @param technology [String] This represent the parsed technology
     def define_technology_image_pattern(technology)
       case technology
-        when 'C#'
-          return 'csharp'
-        when 'C++'
-          return 'cplusplus'
-        else
-          return technology.gsub(%r{ }, '').downcase
+      when 'C#'
+        'csharp'
+      when 'C++'
+        'cplusplus'
+      else
+        technology.gsub(%r{ }, '').downcase
       end
     end
   end

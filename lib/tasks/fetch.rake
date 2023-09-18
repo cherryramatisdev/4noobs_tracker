@@ -43,7 +43,7 @@ namespace :fetch do
     repositories.each do |repository|
       progress_bar.increment
       Github::ExtractIssuesFromRepository.new.call(id: repository[:id], name: repository[:name],
-                                                             owner: repository[:owner])
+                                                   owner: repository[:owner])
     end
 
     progress_bar.finish

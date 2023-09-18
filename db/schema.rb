@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_15_192529) do
-  create_table "issues", force: :cascade do |t|
-    t.string "title"
-    t.string "url"
-    t.string "state"
-    t.string "assignee"
-    t.string "issue_type"
-    t.integer "repository_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["repository_id"], name: "index_issues_on_repository_id"
+ActiveRecord::Schema[7.0].define(version: 20_230_915_192_529) do
+  create_table 'issues', force: :cascade do |t|
+    t.string 'title'
+    t.string 'url'
+    t.string 'state'
+    t.string 'assignee'
+    t.string 'issue_type'
+    t.integer 'repository_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['repository_id'], name: 'index_issues_on_repository_id'
   end
 
-  create_table "repositories", force: :cascade do |t|
-    t.string "name"
-    t.string "owner"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "technology"
-    t.string "technology_image_pattern"
+  create_table 'repositories', force: :cascade do |t|
+    t.string 'name'
+    t.string 'owner'
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'technology'
+    t.string 'technology_image_pattern'
   end
 
-  add_foreign_key "issues", "repositories"
+  add_foreign_key 'issues', 'repositories'
 end

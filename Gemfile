@@ -77,17 +77,17 @@ gem 'ruby-progressbar', '~> 1.13'
 
 gem 'httparty', '~> 0.21.0'
 
-gem "dockerfile-rails", ">= 1.5", :group => :development
+gem 'dockerfile-rails', '>= 1.5', group: :development
 
-gem "sentry-ruby", "~> 5.10"
+gem 'sentry-ruby', '~> 5.10'
 
-gem "sentry-rails", "~> 5.10"
+gem 'sentry-rails', '~> 5.10'
 
-
-gem "heroicon", "~> 1.0"
-gem "pry", "~> 0.14.2"
+gem 'heroicon', '~> 1.0'
+gem 'pry', '~> 0.14.2'
 gem 'pry-rails'
 gem 'whenever', require: false
 gem 'will_paginate', '~> 3.3'
 
-gem "faker", "~> 3.2"
+gem 'faker', '~> 3.2'
+gem 'rubocop', require: false
