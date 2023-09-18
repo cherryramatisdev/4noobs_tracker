@@ -94,17 +94,17 @@ são **extremamente apreciadas**!
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Nandosts">
-            <img src="https://avatars.githubusercontent.com/u/65089035?v=4" width="100;" alt="Nandosts"/>
-            <br />
-            <sub><b>Fernando Melo</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/willy-r">
             <img src="https://avatars.githubusercontent.com/u/47596121?v=4" width="100;" alt="willy-r"/>
             <br />
             <sub><b>William Rodrigues</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Nandosts">
+            <img src="https://avatars.githubusercontent.com/u/65089035?v=4" width="100;" alt="Nandosts"/>
+            <br />
+            <sub><b>Fernando Melo</b></sub>
         </a>
     </td>
     <td align="center">
