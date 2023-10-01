@@ -7,7 +7,7 @@ require 'faker'
   repository = Repository.create(
     name: Faker::App.name,
     owner: Faker::Internet.user_name,
-    url: Faker::Internet.url
+    url: Faker::Internet.url,
     technology: Faker::ProgrammingLanguage.name
   )
 

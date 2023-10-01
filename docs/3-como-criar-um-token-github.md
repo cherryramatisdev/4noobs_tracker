@@ -22,7 +22,7 @@ https://github.com/cherryramatisdev/4noobs_tracker/assets/86631177/f93a96c2-73f0
 5. Agora que você conseguiu copiar o token, crie um arquivo `.env` na pasta do projeto com o seguinte conteudo:
 
 ```
-GH_API_TOKEN=seutokenaqui
+GH_API_KEY=seutokenaqui
 ```
 
 Parabéns! Agora você deve conseguir executar o comandos descritos no [README](/README.md) facilmente.
